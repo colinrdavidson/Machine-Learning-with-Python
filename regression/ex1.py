@@ -36,7 +36,7 @@ theta_init = np.matrix(np.zeros(n)).T
 
 #Gradient descent params
 alpha = 0.01
-iters = 5000
+iters = 1500
 
 #Run gradient descent
 run_descent = gradient_descent(X=X,
@@ -45,8 +45,10 @@ run_descent = gradient_descent(X=X,
                                cost_function = compute_cost,
                                alpha=alpha,
                                iters=iters)
+
 theta = run_descent["theta"]
-hist = run_descent["cost_history"]
+cost_hist = run_descent["cost_history"]
+theta_hist = run_descent["theta_history"]
 
 #predict for ex2data2
 '''
@@ -56,4 +58,3 @@ predict = predict_regression(x=x,
                              mean=X_mean,
                              std=X_std)
 '''
-
